@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource} from "@angular/material";
+import {MatPaginator, MatTableDataSource} from '@angular/material';
 
 
 @Component({
