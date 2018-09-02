@@ -10,6 +10,7 @@ import {HomeLayoutComponent} from './layouts/home-layout/home-layout.component';
 import {LoginLayoutComponent} from './layouts/login-layout/login-layout.component';
 import {DevicesListComponent} from './devices-list/devices-list.component';
 import {NotificationListComponent} from "./notification-list/notification-list.component";
+import {DeviceDetailsComponent} from './device-details/device-details.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
       {
         path: 'list',
         component: DevicesListComponent,
+        canActivate: [AdminAuthGuard]
+      },
+      {
+        path: 'details',
+        component: DeviceDetailsComponent,
         canActivate: [AdminAuthGuard]
       },
       {

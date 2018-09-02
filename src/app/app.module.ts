@@ -9,6 +9,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {MaterialAppModule} from './ngmaterial.module';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
 import {BaseRequestOptions, Http, HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './/app-routing.module';
@@ -29,6 +32,11 @@ import {HomeLayoutComponent} from './layouts/home-layout/home-layout.component';
 import {LoginLayoutComponent} from './layouts/login-layout/login-layout.component';
 import {DevicesListComponent} from './devices-list/devices-list.component';
 import { NotificationListComponent } from './notification-list/notification-list.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FooterComponent } from './footer/footer.component';
+import { LeftColumnComponent } from './left-column/left-column.component';
+import { RightColumnComponent } from './right-column/right-column.component';
+import { DeviceDetailsComponent } from './device-details/device-details.component';
 
 export function getAuthHttp(http) {
   return new AuthHttp(new AuthConfig({
@@ -53,7 +61,11 @@ export function getAuthHttp(http) {
     HomeLayoutComponent,
     LoginLayoutComponent,
     DevicesListComponent,
-    NotificationListComponent
+    NotificationListComponent,
+    FooterComponent,
+    LeftColumnComponent,
+    RightColumnComponent,
+    DeviceDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +76,9 @@ export function getAuthHttp(http) {
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    AngularFontAwesomeModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AuthService,

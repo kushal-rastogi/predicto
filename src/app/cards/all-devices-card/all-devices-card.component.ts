@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-
+import {NgbCalendar, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-all-devices-card',
@@ -8,28 +8,42 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AllDevicesCardComponent implements OnInit {
 
-  dataJson = {
-    "total": 50,
+  model: NgbDateStruct;
+  date: { year: number, month: number };
+  displayMonths = 2;
+  navigation = 'select';
+  showWeekNumbers = false;
+  outsideDays = 'visible';
 
-    "deviceInfo": [
+
+
+  dataJson = {
+    'total': 50,
+
+    'deviceInfo': [
       {
-        "deviceName": "Calvin",
-        "deviceData": 43
+        'deviceName': 'Calvin',
+        'deviceData': 43
       },
       {
-        "deviceName": "Marvin",
-        "deviceData": 95
+        'deviceName': 'Marvin',
+        'deviceData': 95
       }, {
-        "deviceName": "Jackson",
-        "deviceData": 60
+        'deviceName': 'Jackson',
+        'deviceData': 60
       }, {
-        "deviceName": "Cullen",
-        "deviceData": 68
+        'deviceName': 'Cullen',
+        'deviceData': 68
       }
     ]
   };
 
-  constructor() { }
+  constructor(private calendar: NgbCalendar) {
+  }
+
+  selectToday() {
+    this.model = this.calendar.getToday();
+  }
 
   ngOnInit() {
 
